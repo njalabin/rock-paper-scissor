@@ -4,29 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor</title>
+    <title>Rock Paper Scissors Game</title>
 </head>
 <body>
     <script>
-        // Randomly return rock, paper, scissor 
-        // rock > scissor, scissor > paper, and paper > rock
+        // Randomly return rock, paper, scissors 
+        // rock > scissors, scissors > paper, and paper > rock
 
         // Create a function that will generate a random number from 0 - 2
-        // Assign 0 = rock, 1 = paper, and 2 = scissor
+        // Assign 0 = Rock, 1 = Paper, and 2 = Scissors
         // Output string
 
         function computerPlay() {
             let onHand = Math.floor(Math.random() * 3 ) // generate random number from 0 - 2
 
             if (onHand === 0) {
-                return "Rock!";
+                return "rock";
             } else if (onHand === 1) {
-                return "Paper!";
+                return "paper";
             } else {
-                return "Scissor!";
+                return "scissors";
             }
         }
         
+        // Create a function that plays a single round of Rock Paper Scissors with 2 parameters
+        // Return a string that declares the winner of the round
+        // Make the function parameter case-insensitive
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection === "rock" && computerSelection === "scissors") {
+                return "You win! Rock beats scissors";
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
+                return "You lose! Paper beats rock";
+            } else {
+                return "It's a tie";
+            }
+        }
+
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+
     </script>
     
 </body>
