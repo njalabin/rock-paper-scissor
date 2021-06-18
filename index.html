@@ -14,6 +14,18 @@
         // Create a function that will generate a random number from 0 - 2
         // Assign 0 = rock, 1 = paper, and 2 = scissor
         // Output string
+
+        function computerPlay() {
+            let onHand = Math.floor(Math.random() * 3 ) // generate random number from 0 - 2
+
+            if (onHand === 0) {
+                return "Rock!";
+            } else if (onHand === 1) {
+                return "Paper!";
+            } else {
+                return "Scissor!";
+            }
+        }
         
     </script>
     
